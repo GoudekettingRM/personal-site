@@ -4,14 +4,10 @@ import { ProjectType } from "../../types/project";
 
 type Props = {
   data: ProjectType;
-  id: number;
 };
 
 export const ProjectCard: React.FC<Props> = props => {
-  const {
-    data: { title, shortDescr, url, repoUrl, thumbNail },
-    id
-  } = props;
+  const { title, shortDescr, url, repoUrl, thumbNail, id } = props.data;
   return (
     <div>
       <h2>{title}</h2>

@@ -2,6 +2,7 @@ import { ProjectType } from "../../types/project";
 
 export const allProjects: ProjectType[] = [
   {
+    id: 1,
     title: "Should I Go Out?",
     url: "http://www.should-i-go-out.com/",
     repoUrl: "https://github.com/GoudekettingRM/should-i-go-out-client",

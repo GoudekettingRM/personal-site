@@ -7,7 +7,7 @@ export const Projects: React.FC = () => {
     <div>
       <h1>Projects</h1>
       {allProjects.map((project, i) => {
-        return <ProjectCard key={i} data={project} id={i + 1} />;
+        return <ProjectCard key={i} data={project} />;
       })}
     </div>
   );

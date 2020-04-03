@@ -1,4 +1,5 @@
 export interface ProjectType {
+  id: number;
   title: string;
   shortDescr: string;
   url: string;
