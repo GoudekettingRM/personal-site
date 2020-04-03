@@ -4,15 +4,15 @@ import "./App.css";
 import { Home } from "./components/Home/Home";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
-import { Header } from "./components/Header/Header";
 import { Projects } from "./components/Projects/Projects";
 import { ProjectDetails } from "./components/Projects/ProjectDetails";
 import { Footer } from "./components/Footer/Footer";
+import { Menu } from "./components/Header/Menu";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Header />
+      <Menu />
       <main>
         <Switch>
           <Route path="/" exact component={Home} />
