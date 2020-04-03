@@ -1,14 +1,23 @@
 import React from "react";
 import { ProjectCard } from "./ProjectCard";
 import { allProjects } from "./projectData";
+import { History } from "history";
 
-export const Projects: React.FC = () => {
+type Props = {
+  history: History;
+};
+
+export const Projects: React.FC<Props> = props => {
+  const { history } = props;
+
   return (
     <div>
       <h1>Projects</h1>
-      {allProjects.map((project, i) => {
-        return <ProjectCard key={i} data={project} />;
-      })}
+      <div className="projectsContainer">
+        {allProjects.map((project, i) => {
+          return <ProjectCard key={i} data={project} history={history} />;
+        })}
+      </div>
     </div>
   );
 };

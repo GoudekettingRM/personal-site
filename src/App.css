@@ -3,7 +3,12 @@
   min-height: 100vh;
   flex-direction: column;
   text-align: center;
+  font-family: Roboto, monospace;
 }
 main {
   flex: 1 0 auto;
+}
+.subtitle {
+  size: 2rem;
+  font-family: Roboto, monospace;
 }

@@ -1,0 +1,35 @@
+.projectsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.projectCard {
+  max-width: 300px;
+  margin: 0.5rem;
+  padding-bottom: 1rem;
+  font-family: monospace;
+  font-weight: 600;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-shadow: 0px 6px 31px -9px rgba(0, 0, 0, 0.75);
+}
+.projectThumbnail {
+  max-width: 50%;
+  height: auto;
+  width: auto;
+}
+.projectShort {
+  text-align: justify;
+  padding: 1rem;
+}
+.cardLink {
+  text-decoration: none;
+  display: block;
+  margin: 0.2rem;
+  color: inherit;
+  padding: 0 1rem;
+}
+.cardLink:hover {
+  color: blue;
+}
