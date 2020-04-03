@@ -13,12 +13,14 @@ export const Menu: React.FC = () => {
             {pages.map((page, i) => {
               const capitalized =
                 page.charAt(0).toUpperCase() + page.substring(1);
+              const adjustedPage = page === "home" ? "" : page;
               const name = i % 2 === 0 ? "itemEven" : "itemUneven";
               return (
                 <Link
                   key={i}
-                  to={`/${page}`}
+                  to={`/${adjustedPage}`}
                   className={name}
+                  style={{ animationDelay: `${50 * i}ms` }}
                   onClick={() => setOpen(!open)}>
                   {capitalized}
                 </Link>

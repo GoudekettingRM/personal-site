@@ -1,7 +1,8 @@
 export interface ProjectType {
-  url: string;
   title: string;
   shortDescr: string;
+  url: string;
+  repoUrl: string;
   longDescr: string;
   thumbNail: string;
 }

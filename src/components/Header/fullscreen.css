@@ -36,10 +36,10 @@ button.FullscreenMenuToggler {
   margin: 0.5rem;
 }
 .FullscreenMenu .menuItems .itemEven {
-  animation: slideInFromLeft 0.5s ease;
+  animation: slideInFromLeft 0.5s ease backwards;
 }
 .FullscreenMenu .menuItems .itemUneven {
-  animation: slideInFromRight 0.5s ease;
+  animation: slideInFromRight 0.5s ease backwards;
 }
 .FullscreenMenu a {
   color: white;
