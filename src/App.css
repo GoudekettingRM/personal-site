@@ -12,17 +12,46 @@ header {
   position: fixed;
   top: 0;
   background: white;
+  z-index: 5;
   width: 100%;
   box-shadow: 5px 0 5px 0px black;
 }
-
+.loadingCircles {
+  margin-left: auto;
+}
+.form {
+  min-width: 202px;
+  max-width: 50%;
+  margin: 0 auto;
+}
+.button {
+  margin: 0.5rem;
+}
 .pageTitle {
   margin: 0.8rem;
+  font-size: 2rem;
 }
 .subtitle {
   size: 2rem;
   font-family: Roboto, monospace;
 }
 .headerSpacer {
-  height: 5rem;
+  height: 5.5rem;
+}
+button.button.btn {
+  font-weight: 300;
+}
+button.btn.btn-primary,
+button.button.btn.btn-primary {
+  background-color: navy;
+  border-color: navy;
+  font-weight: 300;
+}
+h1,
+h2 {
+  color: navy;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.7rem;
 }

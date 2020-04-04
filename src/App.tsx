@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router";
-import "./App.css";
 import { Home } from "./components/Home/Home";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
@@ -8,6 +7,8 @@ import { Projects } from "./components/Projects/Projects";
 import { ProjectDetails } from "./components/Projects/ProjectDetails";
 import { Footer } from "./components/Footer/Footer";
 import { Menu } from "./components/Header/Menu";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 const App: React.FC = () => {
   return (

@@ -4,9 +4,9 @@
   justify-content: space-evenly;
 }
 .projectCard {
-  max-width: 300px;
-  margin: 0.5rem;
-  padding-bottom: 1rem;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
   font-family: monospace;
   font-weight: 600;
   display: flex;
@@ -18,18 +18,31 @@
   max-width: 50%;
   height: auto;
   width: auto;
+  margin-bottom: 2rem;
+  cursor: pointer;
 }
 .projectShort {
   text-align: justify;
   padding: 1rem;
 }
 .cardLink {
-  text-decoration: none;
   display: block;
   margin: 0.2rem;
   color: inherit;
   padding: 0 1rem;
+  font-size: 1rem;
 }
 .cardLink:hover {
-  color: blue;
+  color: navy;
+  text-decoration: none;
+}
+.cardLink:hover .underline-link {
+  width: 100%;
+}
+.underline-link {
+  display: block;
+  background: navy;
+  height: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
 }

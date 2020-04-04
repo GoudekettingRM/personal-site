@@ -5,7 +5,7 @@ import "./fullscreen.css";
 
 export const Menu: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const pages: string[] = ["home", "about", "contact", "projects"];
+  const pages: string[] = ["home", "projects", "contact", "about"];
   return (
     <div>
       {open && (
@@ -24,6 +24,7 @@ export const Menu: React.FC = () => {
                   style={{ animationDelay: `${50 * i}ms` }}
                   onClick={() => setOpen(!open)}>
                   {capitalized}
+                  <span className="underline-nav"></span>
                 </Link>
               );
             })}
@@ -44,7 +45,7 @@ export const Menu: React.FC = () => {
               animate={{
                 x1: open ? 4 : 0,
                 x2: open ? 20 : 24,
-                y2: open ? 20 : 4
+                y2: open ? 20 : 4,
               }}
             />
             <motion.line
@@ -54,7 +55,7 @@ export const Menu: React.FC = () => {
               y2="12"
               animate={{
                 x1: open ? 12 : 0,
-                x2: open ? 12 : 24
+                x2: open ? 12 : 24,
               }}
             />
             <motion.line
@@ -65,7 +66,7 @@ export const Menu: React.FC = () => {
               animate={{
                 x1: open ? 4 : 0,
                 x2: open ? 20 : 24,
-                y2: open ? 4 : 20
+                y2: open ? 4 : 20,
               }}
             />
           </g>
