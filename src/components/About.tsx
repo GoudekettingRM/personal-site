@@ -1,9 +1,10 @@
 import React from "react";
+import { PageHeader } from "./Header/PageHeader";
 
 export const About: React.FC = () => {
   return (
     <div>
-      <h1>About</h1>
+      <PageHeader title="About" />
     </div>
   );
 };

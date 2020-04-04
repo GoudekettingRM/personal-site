@@ -11,19 +11,22 @@ button.FullscreenMenuToggler {
   padding: 0;
   color: black;
   transition: all 0.2s ease;
+  z-index: 2;
 }
 .FullscreenMenu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: navy;
   color: white;
   font-size: 2rem;
+  z-index: 1;
 }
 .FullscreenMenu div.menuItems {
   display: block;

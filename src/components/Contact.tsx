@@ -1,9 +1,10 @@
 import React from "react";
+import { PageHeader } from "./Header/PageHeader";
 
 export const Contact: React.FC = () => {
   return (
     <div>
-      <h1>Contact</h1>
+      <PageHeader title="Contact" />
     </div>
   );
 };

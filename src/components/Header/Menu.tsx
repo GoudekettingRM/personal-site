@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "./fullscreen.css";
 import { Link } from "react-router-dom";
+import "./fullscreen.css";
 
 export const Menu: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const pages = ["home", "about", "contact", "projects"];
+  const pages: string[] = ["home", "about", "contact", "projects"];
   return (
     <div>
       {open && (

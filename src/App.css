@@ -8,7 +8,21 @@
 main {
   flex: 1 0 auto;
 }
+header {
+  position: fixed;
+  top: 0;
+  background: white;
+  width: 100%;
+  box-shadow: 5px 0 5px 0px black;
+}
+
+.pageTitle {
+  margin: 0.8rem;
+}
 .subtitle {
   size: 2rem;
   font-family: Roboto, monospace;
+}
+.headerSpacer {
+  height: 5rem;
 }
