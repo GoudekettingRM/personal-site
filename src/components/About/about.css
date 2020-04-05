@@ -1,27 +1,15 @@
-.projectsContainer {
+.aboutCardContainer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
-.projectCard {
+.aboutCard {
   width: 20rem;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 1rem auto;
   font-family: monospace;
   font-weight: 600;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   box-shadow: 0px 6px 31px -9px rgba(0, 0, 0, 0.75);
-}
-.projectThumbnail {
-  max-width: 50%;
-  height: auto;
-  width: auto;
-  margin-bottom: 2rem;
-  cursor: pointer;
-}
-.projectShort {
-  text-align: justify;
-  padding: 1rem;
 }

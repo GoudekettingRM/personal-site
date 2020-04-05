@@ -14,7 +14,7 @@ export const Loading: React.FC = () => {
       display: "block",
       width: "0.5rem",
       height: "0.5rem",
-      backgroundColor: "black",
+      backgroundColor: "navy",
       borderRadius: "0.25rem",
     },
     loadingContainerVariants: {

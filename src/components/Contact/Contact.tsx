@@ -3,8 +3,10 @@ import emailjs from "emailjs-com";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { PageHeader } from "./Header/PageHeader";
-import { Loading } from "./FramerMotionIcons/Loading";
+import { PageHeader } from "../Header/PageHeader";
+import { Loading } from "../FramerMotionIcons/Loading";
+import { History } from "history";
+import "./contact.css";
 
 type MessageDataType = {
   name: string;
@@ -13,7 +15,11 @@ type MessageDataType = {
   message: string;
 };
 
-export const Contact: React.FC = () => {
+type Props = {
+  history: History;
+};
+
+export const Contact: React.FC<Props> = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -21,6 +27,8 @@ export const Contact: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const { history } = props;
 
   const _handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -69,19 +77,29 @@ export const Contact: React.FC = () => {
     setLoading(false);
   };
 
-  const _resetForm = (): void => {
-    setName("");
-    setEmail("");
-    setMessage("");
-    setPhone("");
-  };
+  if (success) {
+    window.scrollTo(0, 0);
+    setTimeout(() => history.push("/"), 2500);
+    return (
+      <div>
+        <PageHeader title="Contact" />
+        <div className="successMessage">
+          <h2>Message sent!</h2>
+          <p>Thank you. I will contact you as soon as possible!</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       <PageHeader title="Contact" />
       <h2>Get in touch!</h2>
       {loading && <Loading />}
-      {success && <div>Message sent!</div>}
-      {error && <div>There was an error...</div>}
+      {error && (
+        <div className="errorMessage">
+          <p>There was an error...</p>
+        </div>
+      )}
       {!loading && !error && !success && (
         <div>
           <Form
@@ -131,13 +149,6 @@ export const Contact: React.FC = () => {
 
             <Button variant="primary" type="submit" className="button">
               Send
-            </Button>
-            <Button
-              variant="outline-dark"
-              type="button"
-              className="button"
-              onClick={_resetForm}>
-              Reset Form
             </Button>
           </Form>
         </div>

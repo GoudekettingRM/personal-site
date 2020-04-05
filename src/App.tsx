@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import { Home } from "./components/Home/Home";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
+import { About } from "./components/About/About";
+import { Contact } from "./components/Contact/Contact";
 import { Projects } from "./components/Projects/Projects";
 import { ProjectDetails } from "./components/Projects/ProjectDetails";
 import { Footer } from "./components/Footer/Footer";
