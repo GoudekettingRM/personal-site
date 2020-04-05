@@ -84,3 +84,6 @@ a:not([href]):hover {
 .inline-text {
   font-weight: 400;
 }
+div#g-recaptcha div {
+  margin: 1rem auto;
+}

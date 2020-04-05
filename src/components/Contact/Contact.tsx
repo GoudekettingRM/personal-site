@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import emailjs from "emailjs-com";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { PageHeader } from "../Header/PageHeader";
 import { Loading } from "../FramerMotionIcons/Loading";
 import { History } from "history";
+import Recaptcha from "react-recaptcha";
 import "./contact.css";
 
 type MessageDataType = {
@@ -13,6 +14,7 @@ type MessageDataType = {
   email: string;
   phone: string;
   message: string;
+  "g-recaptcha-response": string;
 };
 
 type Props = {
@@ -27,8 +29,18 @@ export const Contact: React.FC<Props> = (props) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [gRecaptchaToken, setGRecaptchaToken] = useState("");
+  const [readyForRecaptcha, setReadyForRecaptcha] = useState(false);
 
   const { history } = props;
+
+  const _recaptchaLoaded = (): void => {
+    console.log("Loaded!");
+  };
+
+  useEffect(() => {
+    window.setTimeout(() => setReadyForRecaptcha(true), 1000);
+  }, []);
 
   const _handleChange = (
     event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -56,25 +68,43 @@ export const Contact: React.FC<Props> = (props) => {
     }
   };
 
-  const _handleSubmit = async (event: FormEvent): Promise<void> => {
-    event.preventDefault();
-    const messageData: MessageDataType = { name, email, phone, message };
-
-    await setLoading(true);
-    try {
-      await emailjs.send(
-        "strato_webmail",
-        "contact_request",
-        messageData,
-        "user_aEK6JuSDMeN6eXBJSHBN6"
-      );
-      // console.log("Success", response.status, response.text);
-      setSuccess(true);
-    } catch (error) {
-      setError(true);
-      console.error("Failed", error);
+  const _verifyCallback = (response: string): void => {
+    if (response) {
+      setGRecaptchaToken(response);
     }
-    setLoading(false);
+  };
+
+  const _handleSubmit = async (event: FormEvent): Promise<void> => {
+    if (gRecaptchaToken) {
+      event.preventDefault();
+      const messageData: MessageDataType = {
+        name,
+        email,
+        phone,
+        message,
+        "g-recaptcha-response": gRecaptchaToken,
+      };
+
+      await setLoading(true);
+      try {
+        await emailjs.send(
+          "strato_webmail",
+          "contact_request",
+          messageData,
+          "user_aEK6JuSDMeN6eXBJSHBN6"
+        );
+        // console.log("Success", response.status, response.text);
+        setSuccess(true);
+      } catch (error) {
+        setError(true);
+        console.error("Failed", error);
+      }
+      setLoading(false);
+    } else {
+      alert("You have to verify that you are human.");
+      history.push("/contact");
+      return;
+    }
   };
 
   if (success) {
@@ -104,8 +134,8 @@ export const Contact: React.FC<Props> = (props) => {
         <div>
           <Form
             onSubmit={_handleSubmit}
-            action="?"
-            method="POST"
+            // action="?"
+            // method="POST"
             className="form">
             <Form.Label htmlFor="name">Name</Form.Label>
             <FormControl
@@ -146,6 +176,15 @@ export const Contact: React.FC<Props> = (props) => {
               value={message}
               onChange={_handleChange}
             />
+            {!readyForRecaptcha && <Loading />}
+            {readyForRecaptcha && (
+              <Recaptcha
+                sitekey="6LcnvOYUAAAAAAdjNzd3gG6g8YvDEv8eupEpN5hP"
+                render="explicit"
+                onloadCallback={_recaptchaLoaded}
+                verifyCallback={_verifyCallback}
+              />
+            )}
 
             <Button variant="primary" type="submit" className="button">
               Send

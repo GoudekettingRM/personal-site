@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from "react";
+import React, { useState } from "react";
 import { AboutItem } from "../../types/aboutItem";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
