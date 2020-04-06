@@ -87,3 +87,9 @@ a:not([href]):hover {
 div#g-recaptcha div {
   margin: 1rem auto;
 }
+.externalLink {
+  margin: 1rem;
+}
+.icon {
+  height: 2rem;
+}
