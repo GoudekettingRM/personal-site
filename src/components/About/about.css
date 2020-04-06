@@ -3,7 +3,16 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
-.aboutCard {
+.aboutMeContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.aboutCard,
+.githubWidget,
+.aboutText {
   width: 20rem;
   margin: 1rem auto;
   font-family: monospace;
@@ -12,4 +21,44 @@
   flex-flow: column nowrap;
   align-items: center;
   box-shadow: 0px 6px 31px -9px rgba(0, 0, 0, 0.75);
+}
+.aboutText {
+  width: 40%;
+}
+.githubWidget {
+  justify-content: space-evenly;
+}
+.aboutText {
+  padding: 1rem;
+  font-weight: 400;
+}
+.githubWidgetImage {
+  width: 50%;
+  margin: 1rem;
+}
+.githubWidgetIconDescription,
+.githubWidgetCountData {
+  display: block;
+}
+.githubWidgetCountData {
+  font-size: 2rem;
+}
+.githubWidgetData {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+.githubWidgetDataSet {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.verticalLine {
+  width: 1px;
+  background-color: gray;
+}
+.githubWidgetButton {
+  margin: 1rem;
 }
