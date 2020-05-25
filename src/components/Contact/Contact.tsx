@@ -1,17 +1,16 @@
 import React from "react";
+import { RouteComponentProps } from "react-router";
 import { ContactForm } from "./ContactSubComponents/ContactForm";
-import { History } from "history";
 import { PageHeader } from "../Header/PageHeader";
 
-type Props = {
-  history: History;
-};
+interface Props extends RouteComponentProps {}
 
 export const Contact: React.FC<Props> = (props) => {
   return (
     <div>
       <PageHeader title="Contact" />
-      <ContactForm history={props.history} />
+      <h2>Get in touch!</h2>
+      <ContactForm />
     </div>
   );
 };

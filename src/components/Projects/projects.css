@@ -25,3 +25,14 @@
   text-align: justify;
   padding: 1rem;
 }
+.detailsImage {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.projectDetails {
+  max-width: 500px;
+  margin: 1rem auto;
+}
+.informationMargin {
+  margin: 0 1rem;
+}

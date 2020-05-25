@@ -1,6 +1,6 @@
-import React from "react";
-import Github from "../../icons/github.svg";
-import LinkedIn from "../../icons/linkedin.svg";
+import React from 'react';
+import Github from '../../icons/github.svg';
+import LinkedIn from '../../icons/linkedin.svg';
 
 export const Footer: React.FC = () => {
   return (

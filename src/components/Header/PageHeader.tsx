@@ -1,5 +1,4 @@
 import React from "react";
-import { PageTitle } from "./PageTitle";
 
 type Props = {
   title: string;
@@ -8,9 +7,9 @@ type Props = {
 export const PageHeader: React.FC<Props> = (props) => {
   return (
     <div className="header">
-      <div>
-        <PageTitle title={props.title} />
-      </div>
+      <header>
+        <h1 className="pageTitle">{props.title}</h1>
+      </header>
       <div className="headerSpacer"></div>
     </div>
   );

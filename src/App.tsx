@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router";
+import { Switch, Route, useLocation } from "react-router";
 import { Home } from "./components/Home/Home";
 import { About } from "./components/About/About";
 import { Projects } from "./components/Projects/Projects";
@@ -11,16 +11,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App: React.FC = () => {
+  const location = useLocation();
   return (
     <div className="App">
       <Menu />
-      <main>
-        <Switch>
+      <main style={{ overflowX: "hidden", position: "relative" }}>
+        <Switch location={location} key={location.pathname}>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/projects" exact component={Projects} />
-          <Route path="/projects/:id" exact component={ProjectDetails} />
+          <Route path="/projects/:projectId" exact component={ProjectDetails} />
         </Switch>
       </main>
       <Footer />

@@ -7,6 +7,8 @@
 }
 main {
   flex: 1 0 auto;
+  overflow-x: hidden;
+  position: relative;
 }
 header {
   position: fixed;
@@ -93,4 +95,63 @@ div#g-recaptcha div {
 .icon {
   height: 2rem;
   margin: 0 1rem;
+}
+.g-recaptcha {
+  margin: 0 auto;
+}
+#rc-anchor-container {
+  width: 200px;
+}
+.carouselContainer {
+  width: 60vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  width: 100vw;
+  height: 22rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carouselMotionDiv {
+  position: absolute;
+  cursor: pointer;
+  width: 60vw;
+}
+@media only screen and (max-width: 601px) {
+  .carouselContainer {
+    width: 100vw;
+  }
+  .carouselMotionDiv {
+    width: 90vw;
+  }
+}
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.spacer {
+  margin: 1rem auto;
+  height: 7rem;
+  background-image: url('https://res.cloudinary.com/robin-random-files/image/upload/c_scale,h_1000/v1588338786/DSC06569_p1strp.jpg');
+  background-position: center;
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

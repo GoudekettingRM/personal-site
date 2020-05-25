@@ -1,11 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import emailjs from "emailjs-com";
+import { useHistory } from "react-router-dom";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Loading } from "../../FramerMotionIcons/Loading";
-import { History } from "history";
 import Recaptcha from "react-recaptcha";
+import { Loading } from "../../FramerMotionIcons/Loading";
 import "../contact.css";
 
 type MessageDataType = {
@@ -16,11 +16,7 @@ type MessageDataType = {
   "g-recaptcha-response": string;
 };
 
-type Props = {
-  history: History;
-};
-
-export const ContactForm: React.FC<Props> = (props) => {
+export const ContactForm: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -30,8 +26,7 @@ export const ContactForm: React.FC<Props> = (props) => {
   const [success, setSuccess] = useState(false);
   const [gRecaptchaToken, setGRecaptchaToken] = useState("");
   const [readyForRecaptcha, setReadyForRecaptcha] = useState(false);
-
-  const { history } = props;
+  const history = useHistory();
 
   useEffect(() => {
     window.setTimeout(() => setReadyForRecaptcha(true), 1000);
@@ -102,7 +97,7 @@ export const ContactForm: React.FC<Props> = (props) => {
   };
 
   if (success) {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     setTimeout(() => history.push("/"), 2500);
     return (
       <div>
@@ -115,7 +110,6 @@ export const ContactForm: React.FC<Props> = (props) => {
   }
   return (
     <div>
-      <h2>Get in touch!</h2>
       {loading && <Loading />}
       {error && (
         <div className="errorMessage">

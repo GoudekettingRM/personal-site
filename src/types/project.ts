@@ -7,4 +7,5 @@ export interface ProjectType {
   serverRepoUrl?: string;
   longDescr: string;
   thumbNail: string;
+  technologiesUsed: string[];
 }
