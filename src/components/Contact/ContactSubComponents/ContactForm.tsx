@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Recaptcha from 'react-recaptcha';
 import { Loading } from '../../FramerMotionIcons/Loading';
-import '../contact.css';
 
 type MessageDataType = {
   name: string;
@@ -31,32 +30,6 @@ export const ContactForm: React.FC = () => {
   useEffect(() => {
     window.setTimeout(() => setReadyForRecaptcha(true), 1000);
   }, []);
-
-  const _handleChange = (
-    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
-  ): void => {
-    switch (event.target.name) {
-      case 'name': {
-        setName(event.target.value);
-        break;
-      }
-      case 'email': {
-        setEmail(event.target.value);
-        break;
-      }
-      case 'message': {
-        setMessage(event.target.value);
-        break;
-      }
-      case 'phone': {
-        setPhone(event.target.value);
-        break;
-      }
-      default: {
-        break;
-      }
-    }
-  };
 
   const _verifyCallback = (response: string): void => {
     if (response) {
@@ -109,7 +82,7 @@ export const ContactForm: React.FC = () => {
     );
   }
   return (
-    <div>
+    <>
       {loading && <Loading />}
       {error && (
         <div className="errorMessage">
@@ -117,66 +90,68 @@ export const ContactForm: React.FC = () => {
         </div>
       )}
       {!loading && !error && !success && (
-        <div>
-          <Form
-            onSubmit={_handleSubmit}
-            // action="?"
-            // method="POST"
-            className="form marg-0-auto">
-            <Form.Label htmlFor="name">Name</Form.Label>
-            <FormControl
-              placeholder="Name"
-              aria-label="Name"
-              name="name"
-              as="input"
-              type="text"
-              value={name}
-              onChange={_handleChange}
+        <Form onSubmit={_handleSubmit} className="form marg-0-auto">
+          <Form.Label htmlFor="name">Name</Form.Label>
+          <FormControl
+            placeholder="Name"
+            aria-label="Name"
+            name="name"
+            as="input"
+            type="text"
+            value={name}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setName(event.target.value)
+            }
+          />
+          <Form.Label htmlFor="email">E-mail</Form.Label>
+          <FormControl
+            placeholder="E-mail"
+            aria-label="E-mail"
+            name="email"
+            as="input"
+            type="text"
+            value={email}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setEmail(event.target.value)
+            }
+          />
+          <Form.Label htmlFor="phone">Phone number</Form.Label>
+          <FormControl
+            placeholder="Phone number"
+            aria-label="Phone number"
+            name="phone"
+            as="input"
+            type="text"
+            value={phone}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setPhone(event.target.value)
+            }
+          />
+          <Form.Label htmlFor="message">Your message</Form.Label>
+          <FormControl
+            placeholder="Type your message"
+            aria-label="Message"
+            name="message"
+            as="textarea"
+            value={message}
+            onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
+              setMessage(event.target.value)
+            }
+          />
+          {!readyForRecaptcha && <Loading />}
+          {readyForRecaptcha && (
+            <Recaptcha
+              sitekey="6LcnvOYUAAAAAAdjNzd3gG6g8YvDEv8eupEpN5hP"
+              render="explicit"
+              verifyCallback={_verifyCallback}
             />
-            <Form.Label htmlFor="email">E-mail</Form.Label>
-            <FormControl
-              placeholder="E-mail"
-              aria-label="E-mail"
-              name="email"
-              as="input"
-              type="text"
-              value={email}
-              onChange={_handleChange}
-            />
-            <Form.Label htmlFor="phone">Phone number</Form.Label>
-            <FormControl
-              placeholder="Phone number"
-              aria-label="Phone number"
-              name="phone"
-              as="input"
-              type="text"
-              value={phone}
-              onChange={_handleChange}
-            />
-            <Form.Label htmlFor="message">Your message</Form.Label>
-            <FormControl
-              placeholder="Type your message"
-              aria-label="Message"
-              name="message"
-              as="textarea"
-              value={message}
-              onChange={_handleChange}
-            />
-            {!readyForRecaptcha && <Loading />}
-            {readyForRecaptcha && (
-              <Recaptcha
-                sitekey="6LcnvOYUAAAAAAdjNzd3gG6g8YvDEv8eupEpN5hP"
-                render="explicit"
-                verifyCallback={_verifyCallback}
-              />
-            )}
+          )}
 
-            <Button variant="primary" type="submit" className="button">
-              Send
-            </Button>
-          </Form>
-        </div>
+          <Button variant="primary" type="submit" className="button">
+            Send
+          </Button>
+        </Form>
       )}
-    </div>
+    </>
   );
 };

@@ -79,6 +79,7 @@ $header-space: 5rem;
 .marg-0-auto {
   margin: 0 auto;
 }
+
 @mixin margins {
   @for $i from 0 through 10 {
     .marg-#{$i} {
