@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import { PageHeader } from "../Header/PageHeader";
-import { hobbies, educations } from "./data/aboutData";
-import { AboutDataCard } from "./AboutDataCard";
-import { GithubWidget } from "./GithubWidget";
-import { AboutMe } from "./AboutMe";
+import { PageHeader } from '../Header/PageHeader';
+import { hobbies, educations } from '../../data/aboutData';
+import { AboutDataCard } from './AboutDataCard';
+import { GithubWidget } from './GithubWidget';
+import { AboutMe } from './AboutMe';
 
-import "./about.css";
+import './about.css';
 
 export const About: React.FC = () => {
   return (
     <div>
       <PageHeader title="About" />
       <div className="aboutMeContainer">
-        <GithubWidget githubUsername={"GoudekettingRM"} />
-        <AboutMe withTitle />
+        <GithubWidget githubUsername={'GoudekettingRM'} />
+        <AboutMe />
       </div>
       <h2 className="subtitle">Education</h2>
       <div className="aboutCardContainer">

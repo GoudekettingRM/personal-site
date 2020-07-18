@@ -1,3 +1,5 @@
+@use './standards.scss';
+
 .App {
   display: flex;
   min-height: 100vh;
@@ -22,9 +24,8 @@ header {
   margin-left: auto;
 }
 .form {
-  min-width: 202px;
-  max-width: 50%;
-  margin: 0 auto;
+  min-width: 200px;
+  max-width: 500px;
 }
 .button {
   margin: 0.5rem;

@@ -2,15 +2,10 @@ import React from 'react';
 import { UiLink } from '../../ui/UiLink';
 import './about.css';
 
-interface Props {
-  withTitle?: boolean;
-}
-
-export const AboutMe: React.FC<Props> = ({ withTitle }) => {
+export const AboutMe: React.FC = () => {
   return (
     <div className="aboutText">
-      {withTitle && <h2 className="subtitle">About me</h2>}
-      {!withTitle && <h5>Who am I</h5>}
+      <h5>Who am I</h5>
       <p>
         There are three things that drive me in life: learning, improving life,
         and helping others. Learning increases my thirst for knowledge in an{' '}

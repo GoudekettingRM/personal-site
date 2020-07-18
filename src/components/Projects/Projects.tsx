@@ -1,7 +1,7 @@
-import React from "react";
-import { ProjectCard } from "./ProjectCard";
-import { allProjects } from "./data/projectData";
-import { PageHeader } from "../Header/PageHeader";
+import React from 'react';
+import { ProjectCard } from './ProjectCard';
+import { allProjects } from '../../data/projectData';
+import { PageHeader } from '../Header/PageHeader';
 
 export const Projects: React.FC = () => {
   return (

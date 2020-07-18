@@ -1,14 +1,14 @@
-import React from "react";
-import { RouteComponentProps } from "react-router";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import React from 'react';
+import { RouteComponentProps } from 'react-router';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-import { allProjects } from "./data/projectData";
-import { PageHeader } from "../Header/PageHeader";
-import { UiLink } from "../../ui/UiLink";
+import { allProjects } from '../../data/projectData';
+import { PageHeader } from '../Header/PageHeader';
+import { UiLink } from '../../ui/UiLink';
 
-import "./projects.css";
+import './projects.css';
 
 interface Params {
   projectId: string;
@@ -18,7 +18,7 @@ interface Props extends RouteComponentProps<Params> {}
 
 export const ProjectDetails: React.FC<Props> = ({ match }) => {
   const project = allProjects.find(
-    (project) => project.id === parseInt(match.params.projectId)
+    (project) => project.id === parseInt(match.params.projectId),
   );
 
   if (!project)
@@ -54,19 +54,19 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
             <Card.Text>
               {deployedVersionUrl && (
                 <UiLink
-                  label={"< Deployed version />"}
+                  label={'< Deployed version />'}
                   url={deployedVersionUrl}
                 />
               )}
               {clientRepoUrl && (
                 <UiLink
-                  label={"< Examine client code />"}
+                  label={'< Examine client code />'}
                   url={clientRepoUrl}
                 />
               )}
               {serverRepoUrl && (
                 <UiLink
-                  label={"< Examine server code />"}
+                  label={'< Examine server code />'}
                   url={serverRepoUrl}
                 />
               )}

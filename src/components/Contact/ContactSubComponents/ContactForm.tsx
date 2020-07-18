@@ -1,30 +1,30 @@
-import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import emailjs from "emailjs-com";
-import { useHistory } from "react-router-dom";
-import FormControl from "react-bootstrap/FormControl";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Recaptcha from "react-recaptcha";
-import { Loading } from "../../FramerMotionIcons/Loading";
-import "../contact.css";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import emailjs from 'emailjs-com';
+import { useHistory } from 'react-router-dom';
+import FormControl from 'react-bootstrap/FormControl';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Recaptcha from 'react-recaptcha';
+import { Loading } from '../../FramerMotionIcons/Loading';
+import '../contact.css';
 
 type MessageDataType = {
   name: string;
   email: string;
   phone: string;
   message: string;
-  "g-recaptcha-response": string;
+  'g-recaptcha-response': string;
 };
 
 export const ContactForm: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [gRecaptchaToken, setGRecaptchaToken] = useState("");
+  const [gRecaptchaToken, setGRecaptchaToken] = useState('');
   const [readyForRecaptcha, setReadyForRecaptcha] = useState(false);
   const history = useHistory();
 
@@ -33,22 +33,22 @@ export const ContactForm: React.FC = () => {
   }, []);
 
   const _handleChange = (
-    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
   ): void => {
     switch (event.target.name) {
-      case "name": {
+      case 'name': {
         setName(event.target.value);
         break;
       }
-      case "email": {
+      case 'email': {
         setEmail(event.target.value);
         break;
       }
-      case "message": {
+      case 'message': {
         setMessage(event.target.value);
         break;
       }
-      case "phone": {
+      case 'phone': {
         setPhone(event.target.value);
         break;
       }
@@ -72,33 +72,33 @@ export const ContactForm: React.FC = () => {
         email,
         phone,
         message,
-        "g-recaptcha-response": gRecaptchaToken,
+        'g-recaptcha-response': gRecaptchaToken,
       };
 
       await setLoading(true);
       try {
         await emailjs.send(
-          "strato_webmail",
-          "contact_request",
+          'strato_webmail',
+          'contact_request',
           messageData,
-          "user_aEK6JuSDMeN6eXBJSHBN6"
+          'user_aEK6JuSDMeN6eXBJSHBN6',
         );
         setSuccess(true);
       } catch (error) {
         setError(true);
-        console.error("Failed", error);
+        console.error('Failed', error);
       }
       setLoading(false);
     } else {
-      alert("You have to verify that you are human.");
-      history.push("/contact");
+      alert('You have to verify that you are human.');
+      history.push('/contact');
       return;
     }
   };
 
   if (success) {
     // window.scrollTo(0, 0);
-    setTimeout(() => history.push("/"), 2500);
+    setTimeout(() => history.push('/'), 2500);
     return (
       <div>
         <div className="successMessage">
@@ -122,7 +122,7 @@ export const ContactForm: React.FC = () => {
             onSubmit={_handleSubmit}
             // action="?"
             // method="POST"
-            className="form">
+            className="form marg-0-auto">
             <Form.Label htmlFor="name">Name</Form.Label>
             <FormControl
               placeholder="Name"

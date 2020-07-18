@@ -1,0 +1,125 @@
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$header-space: 5rem;
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+@mixin customBreak($screenWidth) {
+  @media (min-width: $screenWidth+'px') {
+    @content;
+  }
+}
+
+@mixin paddings {
+  @for $i from 0 through 10 {
+    .pad-#{$i} {
+      padding: #{$i/2}rem !important;
+    }
+  }
+}
+@include paddings;
+
+@mixin paddings-top {
+  @for $i from 0 through 10 {
+    .pad-#{$i}-t {
+      padding-top: #{$i/2}rem !important;
+    }
+  }
+}
+@include paddings-top;
+
+@mixin paddings-bottom {
+  @for $i from 0 through 10 {
+    .pad-#{$i}-b {
+      padding-bottom: #{$i/2}rem !important;
+    }
+  }
+}
+@include paddings-bottom;
+
+@mixin paddings-left {
+  @for $i from 0 through 10 {
+    .pad-#{$i}-l {
+      padding-left: #{$i/2}rem !important;
+    }
+  }
+}
+@include paddings-left;
+
+@mixin paddings-right {
+  @for $i from 0 through 10 {
+    .pad-#{$i}-r {
+      padding-right: #{$i/2}rem !important;
+    }
+  }
+}
+@include paddings-right;
+
+.marg-0-auto {
+  margin: 0 auto;
+}
+@mixin margins {
+  @for $i from 0 through 10 {
+    .marg-#{$i} {
+      margin: #{$i/2}rem !important;
+    }
+  }
+}
+@include margins;
+
+@mixin margins-top {
+  @for $i from 0 through 10 {
+    .marg-#{$i}-t {
+      margin-top: #{$i/2}rem !important;
+    }
+  }
+}
+@include margins-top;
+
+@mixin margins-bottom {
+  @for $i from 0 through 10 {
+    .marg-#{$i}-b {
+      margin-bottom: #{$i/2}rem !important;
+    }
+  }
+}
+@include margins-bottom;
+
+@mixin margins-left {
+  @for $i from 0 through 10 {
+    .marg-#{$i}-l {
+      margin-left: #{$i/2}rem !important;
+    }
+  }
+}
+@include margins-left;
+
+@mixin margins-right {
+  @for $i from 0 through 10 {
+    .marg-#{$i}-r {
+      margin-right: #{$i/2}rem !important;
+    }
+  }
+}
+@include margins-right;

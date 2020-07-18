@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "@popmotion/popcorn";
-import { allProjects } from "../Projects/data/projectData";
-import "./carousel.css";
-import { useHistory } from "react-router";
+import React from 'react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { wrap } from '@popmotion/popcorn';
+import { allProjects } from '../../data/projectData';
+import './carousel.css';
+import { useHistory } from 'react-router';
 
 const variants = {
   enter: (direction: number) => {
@@ -47,7 +47,7 @@ export const Carousel = () => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 200 },
+            x: { type: 'spring', stiffness: 300, damping: 200 },
             opacity: { duration: 0.2 },
           }}>
           <img
@@ -60,10 +60,10 @@ export const Carousel = () => {
         </motion.div>
       </AnimatePresence>
       <div className="next" onClick={() => paginate(1)}>
-        {"‣"}
+        {'‣'}
       </div>
       <div className="prev" onClick={() => paginate(-1)}>
-        <span className="prevArrow">{"‣"}</span>
+        <span className="prevArrow">{'‣'}</span>
       </div>
     </>
   );
