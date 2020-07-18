@@ -1,10 +1,11 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { ProjectType } from "../../types/project";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import "./projects.css";
-import { UiLink } from "../../ui/UiLink";
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import titleize from 'titleizejs';
+import { ProjectType } from '../../types/project';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import './projects.css';
+import { UiLink } from '../../ui/UiLink';
 
 interface Props {
   data: ProjectType;
@@ -37,7 +38,7 @@ export const ProjectCard: React.FC<Props> = (props) => {
         className="projectThumbnail"
       />
       <Card.Body style={{ padding: 0 }}>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>{titleize(title)}</Card.Title>
         <Card.Text>{shortDescr}</Card.Text>
         <Link to={`/projects/${id}`}>
           <Button variant="primary">Read more</Button>
@@ -45,13 +46,13 @@ export const ProjectCard: React.FC<Props> = (props) => {
         <br />
         <br />
         {deployedVersionUrl && (
-          <UiLink label={"< Deployed version />"} url={deployedVersionUrl} />
+          <UiLink label={'< Deployed version />'} url={deployedVersionUrl} />
         )}
         {clientRepoUrl && (
-          <UiLink label={"< Examine client code />"} url={clientRepoUrl} />
+          <UiLink label={'< Examine client code />'} url={clientRepoUrl} />
         )}
         {serverRepoUrl && (
-          <UiLink label={"< Examine server code />"} url={serverRepoUrl} />
+          <UiLink label={'< Examine server code />'} url={serverRepoUrl} />
         )}
       </Card.Body>
     </Card>

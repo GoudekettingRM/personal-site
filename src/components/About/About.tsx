@@ -11,7 +11,7 @@ import './about.css';
 export const About: React.FC = () => {
   return (
     <div>
-      <PageHeader title="About" />
+      <PageHeader title="about" />
       <div className="aboutMeContainer">
         <GithubWidget githubUsername={'GoudekettingRM'} />
         <AboutMe />

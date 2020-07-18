@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import titleize from 'titleizejs';
 
 type Props = {
   title: string;
@@ -6,11 +7,11 @@ type Props = {
 
 export const PageHeader: React.FC<Props> = (props) => {
   return (
-    <div className="header">
-      <header>
-        <h1 className="pageTitle">{props.title}</h1>
+    <>
+      <header className="header">
+        <h1 className="pageTitle">{titleize(props.title)}</h1>
       </header>
-      <div className="headerSpacer"></div>
-    </div>
+      <div className="spacer"></div>
+    </>
   );
 };

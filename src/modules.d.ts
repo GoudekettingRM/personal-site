@@ -1,1 +1,1 @@
-declare module "react-social-github";
+declare module 'react-social-github';
