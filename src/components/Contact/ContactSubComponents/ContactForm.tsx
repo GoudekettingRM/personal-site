@@ -70,15 +70,14 @@ export const ContactForm: React.FC = () => {
   };
 
   if (success) {
-    // window.scrollTo(0, 0);
     setTimeout(() => history.push('/'), 2500);
     return (
-      <div>
+      <>
         <div className="successMessage">
           <h2>Message sent!</h2>
           <p>Thank you. I will contact you as soon as possible!</p>
         </div>
-      </div>
+      </>
     );
   }
   return (
@@ -90,54 +89,66 @@ export const ContactForm: React.FC = () => {
         </div>
       )}
       {!loading && !error && !success && (
-        <Form onSubmit={_handleSubmit} className="form marg-0-auto">
-          <Form.Label htmlFor="name">Name</Form.Label>
-          <FormControl
-            placeholder="Name"
-            aria-label="Name"
-            name="name"
-            as="input"
-            type="text"
-            value={name}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setName(event.target.value)
-            }
-          />
-          <Form.Label htmlFor="email">E-mail</Form.Label>
-          <FormControl
-            placeholder="E-mail"
-            aria-label="E-mail"
-            name="email"
-            as="input"
-            type="text"
-            value={email}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setEmail(event.target.value)
-            }
-          />
-          <Form.Label htmlFor="phone">Phone number</Form.Label>
-          <FormControl
-            placeholder="Phone number"
-            aria-label="Phone number"
-            name="phone"
-            as="input"
-            type="text"
-            value={phone}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setPhone(event.target.value)
-            }
-          />
-          <Form.Label htmlFor="message">Your message</Form.Label>
-          <FormControl
-            placeholder="Type your message"
-            aria-label="Message"
-            name="message"
-            as="textarea"
-            value={message}
-            onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-              setMessage(event.target.value)
-            }
-          />
+        <Form onSubmit={_handleSubmit} className="contactForm customCard">
+          <div className="inputField__container">
+            <Form.Label htmlFor="name">Name</Form.Label>
+            <FormControl
+              placeholder="Name"
+              aria-label="Name"
+              name="name"
+              as="input"
+              type="text"
+              className="inputField__text"
+              value={name}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                setName(event.target.value)
+              }
+            />
+          </div>
+          <div className="inputField__container">
+            <Form.Label htmlFor="email">E-mail</Form.Label>
+            <FormControl
+              placeholder="E-mail"
+              aria-label="E-mail"
+              name="email"
+              as="input"
+              type="text"
+              className="inputField__text"
+              value={email}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                setEmail(event.target.value)
+              }
+            />
+          </div>
+          <div className="inputField__container">
+            <Form.Label htmlFor="phone">Phone number</Form.Label>
+            <FormControl
+              placeholder="Phone number"
+              aria-label="Phone number"
+              name="phone"
+              as="input"
+              type="text"
+              className="inputField__text"
+              value={phone}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                setPhone(event.target.value)
+              }
+            />
+          </div>
+          <div className="inputField__container">
+            <Form.Label htmlFor="message">Your message</Form.Label>
+            <FormControl
+              placeholder="Type your message"
+              aria-label="Message"
+              name="message"
+              as="textarea"
+              className="inputField__textarea"
+              value={message}
+              onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
+                setMessage(event.target.value)
+              }
+            />
+          </div>
           {!readyForRecaptcha && <Loading />}
           {readyForRecaptcha && (
             <Recaptcha
@@ -147,7 +158,7 @@ export const ContactForm: React.FC = () => {
             />
           )}
 
-          <Button variant="primary" type="submit" className="button">
+          <Button variant="primary" type="submit" className="styledButton">
             Send
           </Button>
         </Form>

@@ -1,0 +1,9 @@
+@import '../../ui/styles/mixins';
+@import '../../ui/styles/variables';
+
+.sectionContainer {
+  padding: 3rem 0;
+  .sectionTitle {
+    @include head2;
+  }
+}

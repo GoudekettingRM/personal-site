@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from '@popmotion/popcorn';
 import { allProjects } from '../../data/projectData';
-import './carousel.css';
+import './carousel.scss';
 import { useHistory } from 'react-router';
 
 const variants = {

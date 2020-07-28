@@ -1,3 +1,9 @@
+@import '../../ui/styles/mixins';
+@import '../../ui/styles/variables';
+
+.cardTitle {
+  @include head3;
+}
 .aboutCardContainer {
   display: flex;
   flex-flow: row wrap;
@@ -13,14 +19,11 @@
 .aboutCard,
 .githubWidget,
 .aboutText {
-  width: 20rem;
-  margin: 1rem auto;
   font-family: monospace;
   font-weight: 600;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  box-shadow: 0px 6px 31px -9px rgba(0, 0, 0, 0.75);
 }
 @media only screen and (min-width: 601px) {
   .aboutText {

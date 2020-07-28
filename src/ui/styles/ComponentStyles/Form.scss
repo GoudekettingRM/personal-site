@@ -1,0 +1,12 @@
+@import '../mixins';
+@import '../variables';
+
+.contactForm.customCard {
+  width: 95vw;
+}
+
+@include lg {
+  .contactForm.customCard {
+    width: 60vw;
+  }
+}

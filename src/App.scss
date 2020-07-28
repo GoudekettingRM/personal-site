@@ -1,4 +1,9 @@
-@use './standards.scss';
+@import './ui/styles/mixins';
+@import './ui/styles/variables';
+@import './ui/styles/ComponentStyles/Button.scss';
+@import './ui/styles/ComponentStyles/Card.scss';
+@import './ui/styles/ComponentStyles/Form.scss';
+@import './ui/styles/ComponentStyles/InputFields.scss';
 
 .App {
   display: flex;
@@ -6,81 +11,20 @@
   flex-direction: column;
   text-align: center;
   font-family: Roboto, monospace;
+  font-size: 16px;
 }
 main {
   flex: 1 0 auto;
   overflow-x: hidden;
   position: relative;
 }
-header {
-  position: fixed;
-  top: 0;
-  background: white;
-  z-index: 5;
-  width: 100%;
-  box-shadow: 5px 0 5px 0px black;
-}
 .loadingCircles {
   margin-left: auto;
-}
-.form {
-  min-width: 200px;
-  max-width: 500px;
-}
-.button {
-  margin: 0.5rem;
-}
-.pageTitle {
-  margin: 0.8rem;
-  font-size: 2rem;
-}
-.subtitle {
-  size: 2rem;
-  font-family: Roboto, monospace;
 }
 .spacer {
   height: 2.5rem;
 }
-button.button.btn {
-  font-weight: 300;
-}
-button.btn.btn-primary,
-button.button.btn.btn-primary {
-  background-color: navy;
-  border-color: navy;
-  font-weight: 300;
-}
-h1,
-h2 {
-  color: navy;
-  font-weight: bold;
-}
-h2 {
-  font-size: 1.7rem;
-}
-.cardLink {
-  display: block;
-  margin: 0.2rem;
-  color: inherit;
-  font-size: 1rem;
-}
-.cardLink:hover {
-  color: navy;
-  text-decoration: none;
-}
-.cardLink:hover .underline-link {
-  width: 100%;
-}
-.underline-link {
-  display: block;
-  background: navy;
-  height: 2px;
-  width: 0%;
-  transition: width 0.3s ease;
-}
-a:not([href]):hover {
-  color: navy;
-}
+
 .padded-top {
   margin-top: 2rem;
 }
@@ -100,54 +44,8 @@ div#g-recaptcha div {
 .g-recaptcha {
   margin: 0 auto;
 }
-#rc-anchor-container {
-  width: 200px;
-}
-.carouselContainer {
-  width: 60vw;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel {
-  width: 100vw;
-  height: 22rem;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carouselMotionDiv {
-  position: absolute;
-  cursor: pointer;
-  width: 60vw;
-}
-@media only screen and (max-width: 601px) {
-  .carouselContainer {
-    width: 100vw;
-  }
-  .carouselMotionDiv {
-    width: 90vw;
-  }
-}
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.spacer {
+
+.backgroundImageSpacer {
   margin: 1rem auto;
   height: 7rem;
   background-image: url('https://res.cloudinary.com/robin-random-files/image/upload/c_scale,h_1000/v1588338786/DSC06569_p1strp.jpg');
@@ -155,4 +53,18 @@ div#g-recaptcha div {
   background-size: initial;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.successMessage {
+  width: 100%;
+  p {
+    margin: 0 auto;
+    width: 80%;
+    font-family: monospace;
+  }
+}
+
+@include sm {
+  .contactForm {
+  }
 }

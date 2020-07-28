@@ -1,32 +1,25 @@
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-
-$header-space: 5rem;
-
 @mixin sm {
-  @media (min-width: $breakpoint-sm) {
+  @media only screen and (min-width: $breakpoint-sm) {
     @content;
   }
 }
 @mixin md {
-  @media (min-width: $breakpoint-md) {
+  @media only screen and (min-width: $breakpoint-md) {
     @content;
   }
 }
 @mixin lg {
-  @media (min-width: $breakpoint-lg) {
+  @media only screen and (min-width: $breakpoint-lg) {
     @content;
   }
 }
 @mixin xl {
-  @media (min-width: $breakpoint-xl) {
+  @media only screen and (min-width: $breakpoint-xl) {
     @content;
   }
 }
 @mixin customBreak($screenWidth) {
-  @media (min-width: $screenWidth+'px') {
+  @media only screen and (min-width: $screenWidth+'px') {
     @content;
   }
 }
@@ -124,3 +117,27 @@ $header-space: 5rem;
   }
 }
 @include margins-right;
+
+@mixin head1 {
+  color: navy;
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+@mixin head2 {
+  color: navy;
+  opacity: 0.8;
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+@mixin head3 {
+  color: darkslategray;
+  font-family: monospace;
+  font-size: 24px;
+  line-height: 1.7;
+}

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import { Loading } from "../FramerMotionIcons/Loading";
-import Image from "react-bootstrap/Image";
-import Repo from "../../icons/repo.svg";
-import Gist from "../../icons/gist.svg";
-import GitHubLogo from "../../icons/github.svg";
+import React, { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import { Loading } from '../FramerMotionIcons/Loading';
+import Image from 'react-bootstrap/Image';
+import Repo from '../../icons/repo.svg';
+import Gist from '../../icons/gist.svg';
+import GitHubLogo from '../../icons/github.svg';
 
 interface Props {
   githubUsername: string;
@@ -24,7 +24,7 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
     const getGithubData = async (): Promise<GithubData | void> => {
       try {
         const response = await fetch(
-          `https://api.github.com/users/${githubUsername}`
+          `https://api.github.com/users/${githubUsername}`,
         );
         const parsedResponse = await response.json();
         if (Object.keys(parsedResponse).length) {
@@ -44,7 +44,7 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
       const data = await getGithubData();
       if (data) {
         setGithubData(data);
-      } else console.log("No data");
+      } else console.log('No data');
     };
 
     if (!githubData) {
@@ -54,7 +54,7 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
 
   if (githubData) {
     return (
-      <div className="githubWidget">
+      <div className="githubWidget customCard">
         <Image
           className="githubWidgetImage"
           roundedCircle

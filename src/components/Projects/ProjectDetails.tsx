@@ -8,7 +8,8 @@ import { allProjects } from '../../data/projectData';
 import { PageHeader } from '../Header/PageHeader';
 import { UiLink } from '../../ui/UiLink';
 
-import './projects.css';
+import './projects.scss';
+import titleize from 'titleizejs';
 
 interface Params {
   projectId: string;
@@ -40,8 +41,8 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
   } = project;
 
   return (
-    <div>
-      <PageHeader title={title} />
+    <>
+      <PageHeader title={titleize(title)} />
       <div className="projectDetails">
         <Accordion className="informationMargin">
           <Card>
@@ -74,7 +75,10 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
           </Card>
           <Card>
             <Card.Header>
-              <Accordion.Toggle as={Button} eventKey="0">
+              <Accordion.Toggle
+                as={Button}
+                eventKey="0"
+                className="styledButton">
                 More About the Project
               </Accordion.Toggle>
             </Card.Header>
@@ -84,7 +88,10 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
           </Card>
           <Card>
             <Card.Header>
-              <Accordion.Toggle as={Button} eventKey="1">
+              <Accordion.Toggle
+                as={Button}
+                eventKey="1"
+                className="styledButton">
                 Technologies Used
               </Accordion.Toggle>
             </Card.Header>
@@ -102,6 +109,6 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
           </Card>
         </Accordion>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
-import "./fullscreen.css";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import './fullscreen.scss';
 
 export const transitionVariants = {
   initial: {
     opacity: 0,
-    y: "-100vw",
+    y: '-100vw',
     scale: 0.8,
   },
   in: {
@@ -16,20 +16,20 @@ export const transitionVariants = {
   },
   out: {
     opacity: 0,
-    y: "-100vw",
+    y: '-100vw',
     scale: 0.8,
   },
 };
 
 export const transition = {
-  type: "tween",
-  ease: "anticipate",
+  type: 'tween',
+  ease: 'anticipate',
   duration: 0.5,
 };
 
 export const Menu: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const pages: string[] = ["home", "projects", "contact", "about"];
+  const pages: string[] = ['home', 'projects', 'contact', 'about'];
   return (
     <div>
       <AnimatePresence>
@@ -45,8 +45,8 @@ export const Menu: React.FC = () => {
               {pages.map((page, i) => {
                 const capitalized =
                   page.charAt(0).toUpperCase() + page.substring(1);
-                const adjustedPage = page === "home" ? "" : page;
-                const name = i % 2 === 0 ? "itemEven" : "itemUneven";
+                const adjustedPage = page === 'home' ? '' : page;
+                const name = i % 2 === 0 ? 'itemEven' : 'itemUneven';
                 return (
                   <Link
                     key={i}
@@ -65,7 +65,7 @@ export const Menu: React.FC = () => {
       </AnimatePresence>
       <button
         className="FullscreenMenuToggler"
-        style={{ color: open ? "white" : "black" }}
+        style={{ color: open ? 'white' : 'black' }}
         onClick={() => setOpen(!open)}>
         <svg width="2rem" height="2rem" viewBox="0 0 24 24">
           <g stroke="currentColor" strokeWidth={2}>

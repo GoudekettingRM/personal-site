@@ -1,0 +1,6 @@
+@import '../../ui/styles/mixins';
+@import '../../ui/styles/variables';
+
+.contactTitle {
+  @include head2;
+}

@@ -1,3 +1,34 @@
+@import '../../ui/styles/mixins';
+@import '../../ui/styles/variables';
+
+.carouselContainer {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  width: 100vw;
+  height: 22rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carouselMotionDiv {
+  position: absolute;
+  cursor: pointer;
+  width: 90vw;
+}
+@include lg {
+  .carouselContainer,
+  .carouselMotionDiv {
+    width: 60vw;
+  }
+}
 .carouselItemImg {
   max-width: 100vw;
   max-height: 300px;

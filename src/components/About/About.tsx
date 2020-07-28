@@ -6,7 +6,7 @@ import { AboutDataCard } from './AboutDataCard';
 import { GithubWidget } from './GithubWidget';
 import { AboutMe } from './AboutMe';
 
-import './about.css';
+import './about.scss';
 
 export const About: React.FC = () => {
   return (

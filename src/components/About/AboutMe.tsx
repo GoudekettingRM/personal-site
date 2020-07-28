@@ -1,11 +1,11 @@
 import React from 'react';
 import { UiLink } from '../../ui/UiLink';
-import './about.css';
+import './about.scss';
 
 export const AboutMe: React.FC = () => {
   return (
-    <div className="aboutText">
-      <h5>Who am I</h5>
+    <div className="aboutText customCard">
+      <h5 className="cardTitle">Who am I</h5>
       <p>
         There are three things that drive me in life: learning, improving life,
         and helping others. Learning increases my thirst for knowledge in an{' '}

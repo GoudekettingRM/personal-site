@@ -4,7 +4,7 @@ import titleize from 'titleizejs';
 import { ProjectType } from '../../types/project';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import './projects.css';
+import './projects.scss';
 import { UiLink } from '../../ui/UiLink';
 
 interface Props {
@@ -29,7 +29,7 @@ export const ProjectCard: React.FC<Props> = (props) => {
   };
 
   return (
-    <Card className="projectCard" title={shortDescr}>
+    <Card className="projectCard customCard" title={shortDescr}>
       <Card.Img
         variant="top"
         onClick={handleClick}
@@ -41,7 +41,9 @@ export const ProjectCard: React.FC<Props> = (props) => {
         <Card.Title>{titleize(title)}</Card.Title>
         <Card.Text>{shortDescr}</Card.Text>
         <Link to={`/projects/${id}`}>
-          <Button variant="primary">Read more</Button>
+          <Button variant="primary" className="styledButton">
+            Read more
+          </Button>
         </Link>
         <br />
         <br />
