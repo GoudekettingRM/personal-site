@@ -1,5 +1,12 @@
 import { ProjectType } from '../types/project';
 
+export const repoUrlLabels: { [index: string]: string } = {
+  deployedUrlLabel: '< Deployed version />',
+  clientRepoLabel: '< Examine client code />',
+  serverRepoLabel: '< Examine server code />',
+  generalRepoLabel: '< Examine code />',
+};
+
 export const allProjects: ProjectType[] = [
   {
     id: 1,

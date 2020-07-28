@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import './projects.scss';
 import { UiLink } from '../../ui/UiLink';
+import { repoUrlLabels } from '../../data/projectData';
 
 interface Props {
   data: ProjectType;
@@ -22,6 +23,13 @@ export const ProjectCard: React.FC<Props> = (props) => {
     thumbNail,
     id,
   } = props.data;
+
+  const {
+    deployedUrlLabel,
+    clientRepoLabel,
+    serverRepoLabel,
+    generalRepoLabel,
+  } = repoUrlLabels;
 
   const history = useHistory();
 
@@ -49,16 +57,16 @@ export const ProjectCard: React.FC<Props> = (props) => {
         <br />
         <br />
         {deployedVersionUrl && (
-          <UiLink label={'< Deployed version />'} url={deployedVersionUrl} />
+          <UiLink label={deployedUrlLabel} url={deployedVersionUrl} />
         )}
         {clientRepoUrl && (
-          <UiLink label={'< Examine client code />'} url={clientRepoUrl} />
+          <UiLink label={clientRepoLabel} url={clientRepoUrl} />
         )}
         {serverRepoUrl && (
-          <UiLink label={'< Examine server code />'} url={serverRepoUrl} />
+          <UiLink label={serverRepoLabel} url={serverRepoUrl} />
         )}
         {generalRepoUrl && (
-          <UiLink label={'< Examine code />'} url={generalRepoUrl} />
+          <UiLink label={generalRepoLabel} url={generalRepoUrl} />
         )}
       </Card.Body>
     </Card>

@@ -7,7 +7,6 @@ import './footer.scss';
 export const Footer: React.FC = () => {
   return (
     <>
-      <div className="spacer"></div>
       <footer>
         <hr />
         <p>

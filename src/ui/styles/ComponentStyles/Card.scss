@@ -26,9 +26,12 @@
 }
 .cardLink {
   display: block;
-  margin: 0.4rem 0.2rem;
+  margin: 0.8rem 0.2rem;
   color: inherit;
   font-size: 1rem;
+  .underline-link {
+    width: 100%;
+  }
   &:hover {
     color: navy;
     text-decoration: none;
@@ -39,11 +42,22 @@
 }
 .underline-link {
   display: block;
-  background: navy;
+  background: $grey-800;
   height: 2px;
   width: 0%;
   transition: width 0.3s ease;
 }
 a:not([href]):hover {
   color: navy;
+}
+@include sm {
+  .cardLink {
+    margin: 0.4rem 0.2rem;
+    .underline-link {
+      width: 0%;
+    }
+  }
+  .underline-link {
+    background-color: navy;
+  }
 }

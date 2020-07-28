@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { allProjects } from '../../data/projectData';
 import { PageHeader } from '../Header/PageHeader';
 import { UiLink } from '../../ui/UiLink';
+import { repoUrlLabels } from '../../data/projectData';
 
 import './projects.scss';
 import titleize from 'titleizejs';
@@ -38,77 +39,64 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
     clientRepoUrl,
     deployedVersionUrl,
     serverRepoUrl,
+    generalRepoUrl,
   } = project;
+
+  const {
+    deployedUrlLabel,
+    clientRepoLabel,
+    serverRepoLabel,
+    generalRepoLabel,
+  } = repoUrlLabels;
 
   return (
     <>
       <PageHeader title={titleize(title)} />
-      <div className="projectDetails">
-        <Accordion className="informationMargin">
-          <Card>
-            <Card.Img
-              className="detailsImage"
-              src={thumbNail}
-              alt={title}
-              title={title}></Card.Img>
-            <Card.Body>{shortDescr}</Card.Body>
+      <div className="spacerSmall"></div>
+      <Accordion className="customCard">
+        <Card.Img
+          className="detailsImage"
+          src={thumbNail}
+          alt={title}
+          title={title}></Card.Img>
+        <Card.Body>{shortDescr}</Card.Body>
+        <Accordion.Toggle as={Button} eventKey="0" className="styledButton">
+          More About the Project
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body>
+            <Card.Text>{longDescr}</Card.Text>
             <Card.Text>
               {deployedVersionUrl && (
-                <UiLink
-                  label={'< Deployed version />'}
-                  url={deployedVersionUrl}
-                />
+                <UiLink label={deployedUrlLabel} url={deployedVersionUrl} />
               )}
               {clientRepoUrl && (
-                <UiLink
-                  label={'< Examine client code />'}
-                  url={clientRepoUrl}
-                />
+                <UiLink label={clientRepoLabel} url={clientRepoUrl} />
               )}
               {serverRepoUrl && (
-                <UiLink
-                  label={'< Examine server code />'}
-                  url={serverRepoUrl}
-                />
+                <UiLink label={serverRepoLabel} url={serverRepoUrl} />
+              )}
+              {generalRepoUrl && (
+                <UiLink label={generalRepoLabel} url={generalRepoUrl} />
               )}
             </Card.Text>
-          </Card>
-          <Card>
-            <Card.Header>
-              <Accordion.Toggle
-                as={Button}
-                eventKey="0"
-                className="styledButton">
-                More About the Project
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>{longDescr}</Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card>
-            <Card.Header>
-              <Accordion.Toggle
-                as={Button}
-                eventKey="1"
-                className="styledButton">
-                Technologies Used
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                {technologiesUsed.map((technology, i) => {
-                  if (i !== technologiesUsed.length - 1) {
-                    return <span key={i}>{technology} | </span>;
-                  } else {
-                    return <span key={i}>{technology}</span>;
-                  }
-                })}
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
-      </div>
+          </Card.Body>
+        </Accordion.Collapse>
+        <Accordion.Toggle as={Button} eventKey="1" className="styledButton">
+          Technologies Used
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey="1">
+          <Card.Body>
+            {technologiesUsed.map((technology, i) => {
+              if (i !== technologiesUsed.length - 1) {
+                return <span key={i}>{technology} | </span>;
+              } else {
+                return <span key={i}>{technology}</span>;
+              }
+            })}
+          </Card.Body>
+        </Accordion.Collapse>
+      </Accordion>
     </>
   );
 };
