@@ -18,6 +18,7 @@ export const ProjectCard: React.FC<Props> = (props) => {
     deployedVersionUrl,
     clientRepoUrl,
     serverRepoUrl,
+    generalRepoUrl,
     thumbNail,
     id,
   } = props.data;
@@ -55,6 +56,9 @@ export const ProjectCard: React.FC<Props> = (props) => {
         )}
         {serverRepoUrl && (
           <UiLink label={'< Examine server code />'} url={serverRepoUrl} />
+        )}
+        {generalRepoUrl && (
+          <UiLink label={'< Examine code />'} url={generalRepoUrl} />
         )}
       </Card.Body>
     </Card>

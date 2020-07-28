@@ -5,6 +5,7 @@ export interface ProjectType {
   deployedVersionUrl?: string;
   clientRepoUrl?: string;
   serverRepoUrl?: string;
+  generalRepoUrl?: string;
   longDescr: string;
   thumbNail: string;
   technologiesUsed: string[];

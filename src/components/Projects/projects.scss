@@ -1,3 +1,6 @@
+@import '../../ui/styles/variables';
+@import '../../ui/styles/mixins';
+
 .projectsContainer {
   display: flex;
   flex-flow: row wrap;
@@ -12,7 +15,13 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  box-shadow: 0px 6px 31px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: $shadow-small;
+  .card-title {
+    @include head3;
+  }
+  .card-text {
+    font-weight: normal;
+  }
 }
 .projectThumbnail {
   max-width: 50%;

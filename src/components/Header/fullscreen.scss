@@ -28,7 +28,7 @@ button.FullscreenMenuToggler {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $grey-700;
+  background: $grey-800;
   color: white;
   font-size: 2rem;
   z-index: 10;
@@ -43,7 +43,7 @@ button.FullscreenMenuToggler {
   display: block;
   margin: 0.5rem;
   @supports (-webkit-text-stroke: 1px black) {
-    -webkit-text-stroke: 1px $grey-800;
+    -webkit-text-stroke: 1px $grey-900;
   }
 }
 .FullscreenMenu .menuItems .itemEven {
