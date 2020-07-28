@@ -4,12 +4,13 @@
 .header {
   position: fixed;
   top: 0;
-  background: white;
+  background: $grey-900;
   z-index: 5;
   width: 100%;
   box-shadow: $shadow-medium;
-  h1 {
+  .pageTitle {
     @include head1;
+    color: $white;
     padding: 0.5rem 0;
     margin: 0;
   }

@@ -1,3 +1,5 @@
+@import '../../ui/styles/variables';
+
 button.FullscreenMenuToggler {
   position: fixed;
   top: 1rem;
@@ -9,9 +11,12 @@ button.FullscreenMenuToggler {
   cursor: pointer;
   margin: 0;
   padding: 0;
-  color: navy;
+  color: $white;
   transition: all 0.2s ease;
   z-index: 11;
+  svg {
+    fill: $white;
+  }
 }
 .FullscreenMenu {
   position: fixed;
@@ -23,7 +28,7 @@ button.FullscreenMenuToggler {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: navy;
+  background: $grey-700;
   color: white;
   font-size: 2rem;
   z-index: 10;
@@ -37,6 +42,9 @@ button.FullscreenMenuToggler {
 .FullscreenMenu .menuItems .itemUneven {
   display: block;
   margin: 0.5rem;
+  @supports (-webkit-text-stroke: 1px black) {
+    -webkit-text-stroke: 1px $grey-800;
+  }
 }
 .FullscreenMenu .menuItems .itemEven {
   animation: slideInFromLeft 0.5s ease backwards;

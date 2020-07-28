@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin sm {
   @media only screen and (min-width: $breakpoint-sm) {
     @content;
@@ -119,7 +121,7 @@
 @include margins-right;
 
 @mixin head1 {
-  color: navy;
+  color: $white;
   font-size: 32px;
   line-height: 1.5;
   font-weight: bold;
@@ -127,8 +129,7 @@
 }
 
 @mixin head2 {
-  color: navy;
-  opacity: 0.8;
+  color: $white;
   font-size: 28px;
   line-height: 1.6;
   font-weight: bold;
@@ -136,7 +137,7 @@
 }
 
 @mixin head3 {
-  color: darkslategray;
+  color: $grey-900;
   font-family: monospace;
   font-size: 24px;
   line-height: 1.7;

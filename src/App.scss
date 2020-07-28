@@ -12,6 +12,7 @@
   text-align: center;
   font-family: Roboto, monospace;
   font-size: 16px;
+  background-color: $grey-900;
 }
 main {
   flex: 1 0 auto;
@@ -33,13 +34,6 @@ main {
 }
 div#g-recaptcha div {
   margin: 1rem auto;
-}
-.externalLink {
-  margin: 1rem;
-}
-.icon {
-  height: 2rem;
-  margin: 0 1rem;
 }
 .g-recaptcha {
   margin: 0 auto;

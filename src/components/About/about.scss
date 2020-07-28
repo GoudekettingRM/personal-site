@@ -15,6 +15,9 @@
   flex-flow: row wrap;
   justify-content: space-between;
   margin-bottom: 1rem;
+  .loadingDiv {
+    width: 100vw;
+  }
 }
 .aboutCard,
 .githubWidget,

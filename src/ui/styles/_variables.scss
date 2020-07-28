@@ -5,5 +5,124 @@ $breakpoint-xl: 1200px;
 
 $header-space: 5rem;
 
-$shadow-small: 0px 6px 10px -2px rgba(0, 0, 0, 0.65);
-$shadow-medium: 5px 0 5px 0px black;
+// Black & White
+$black: #000000;
+$white: #FFFFFF;
+
+// Grey
+$grey-100: #F8F9FA;
+$grey-200: #E1E7EC;
+$grey-300: #D5DDE5;
+$grey-400: #CCD4DB;
+$grey-500: #AEBECC;
+$grey-600: #929FB0;
+$grey-700: #6E7A89;
+$grey-800: #404B59;
+$grey-900: #212934;
+
+// Red
+$red-100: #FFF5F5;
+$red-200: #FED7D7;
+$red-300: #FEB2B2;
+$red-400: #FC8181;
+$red-500: #F56565;
+$red-600: #E53E3E;
+$red-700: #C53030;
+$red-800: #9B2C2C;
+$red-900: #742A2A;
+
+// Orange
+$orange-100: #FFFAF0;
+$orange-200: #FEEBC8;
+$orange-300: #FBD38D;
+$orange-400: #F6AD55;
+$orange-500: #ED8936;
+$orange-600: #DD6B20;
+$orange-700: #C05621;
+$orange-800: #9C4221;
+$orange-900: #7B341E;
+
+// Yellow
+$yellow-100: #FFFFF0;
+$yellow-200: #FEFCBF;
+$yellow-300: #FAF089;
+$yellow-400: #F6E05E;
+$yellow-500: #ECC94B;
+$yellow-600: #D69E2E;
+$yellow-700: #B7791F;
+$yellow-800: #975A16;
+$yellow-900: #744210;
+
+// Green
+$green-100: #F0FFF4;
+$green-200: #C6F6D5;
+$green-300: #9AE6B4;
+$green-400: #68D391;
+$green-500: #48BB78;
+$green-600: #38A169;
+$green-700: #2F855A;
+$green-800: #276749;
+$green-900: #22543D;
+
+// Teal
+$teal-100: #E6FFFA;
+$teal-200: #B2F5EA;
+$teal-300: #81E6D9;
+$teal-400: #4FD1C5;
+$teal-500: #38B2AC;
+$teal-600: #319795;
+$teal-700: #2C7A7B;
+$teal-800: #285E61;
+$teal-900: #234E52;
+
+// Blue
+$blue-100: #EBF8FF;
+$blue-200: #BEE3F8;
+$blue-300: #90CDF4;
+$blue-400: #63B3ED;
+$blue-500: #4299E1;
+$blue-600: #3182CE;
+$blue-700: #2B6CB0;
+$blue-800: #2C5282;
+$blue-900: #2A4365;
+
+// Indigo
+$indigo-100: #EBF4FF;
+$indigo-200: #C3DAFE;
+$indigo-300: #A3BFFA;
+$indigo-400: #7F9CF5;
+$indigo-500: #667EEA;
+$indigo-600: #5A67D8;
+$indigo-700: #4C51BF;
+$indigo-800: #434190;
+$indigo-900: #3C366B;
+
+// Purple
+$purple-100: #FAF5FF;
+$purple-200: #E9D8FD;
+$purple-300: #D6BCFA;
+$purple-400: #B794F4;
+$purple-500: #9F7AEA;
+$purple-600: #805AD5;
+$purple-700: #6B46C1;
+$purple-800: #553C9A;
+$purple-900: #44337A;
+
+// Pink
+$pink-100: #FFF5F7;
+$pink-200: #FED7E2;
+$pink-300: #FBB6CE;
+$pink-400: #FBB6CE;
+$pink-500: #FBB6CE;
+$pink-600: #D53F8C;
+$pink-700: #B83280;
+$pink-800: #97266D;
+$pink-900: #702459;
+
+// Shadows
+$shadow-small:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-medium:  0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-large:  0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:  0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+

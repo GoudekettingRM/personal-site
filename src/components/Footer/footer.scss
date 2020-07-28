@@ -1,0 +1,17 @@
+@import '../../ui/styles/variables';
+
+hr {
+  background-color: $grey-100;
+}
+.externalLink {
+  margin: 1rem;
+}
+.icon {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 1rem;
+  fill: $white;
+}
+.copyright {
+  color: $white;
+}

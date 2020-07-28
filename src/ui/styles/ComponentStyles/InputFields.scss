@@ -1,7 +1,11 @@
+@import '../variables';
+
 .inputField__text {
   margin-bottom: 1rem;
+  box-shadow: $shadow-small;
 }
 .inputField__textarea {
   min-height: 10rem;
   max-height: 10rem;
+  box-shadow: $shadow-small;
 }

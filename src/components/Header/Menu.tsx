@@ -63,10 +63,7 @@ export const Menu: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <button
-        className="FullscreenMenuToggler"
-        style={{ color: open ? 'white' : 'black' }}
-        onClick={() => setOpen(!open)}>
+      <button className="FullscreenMenuToggler" onClick={() => setOpen(!open)}>
         <svg width="2rem" height="2rem" viewBox="0 0 24 24">
           <g stroke="currentColor" strokeWidth={2}>
             <motion.line
