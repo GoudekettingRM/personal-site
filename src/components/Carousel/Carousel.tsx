@@ -6,6 +6,8 @@ import { allProjects } from '../../data/projectData';
 import './carousel.scss';
 import { useHistory } from 'react-router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import titleize from 'titleizejs';
+import slugify from 'slugify';
 
 const variants = {
   enter: (direction: number) => {
@@ -39,7 +41,11 @@ export const Carousel = () => {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          onClick={() => history.push(`/projects/${allProjects[index].id}`)}
+          onClick={() =>
+            history.push(
+              `/projects/${slugify(allProjects[index].title.toLowerCase())}`,
+            )
+          }
           className="carouselMotionDiv"
           key={page}
           custom={direction}
@@ -51,6 +57,9 @@ export const Carousel = () => {
             x: { type: 'spring', stiffness: 300, damping: 200 },
             opacity: { duration: 0.2 },
           }}>
+          <h3 className="carouselProjectTitle">
+            {titleize(allProjects[index].title, { keepUpperCaseLetters: true })}
+          </h3>
           <LazyLoadImage
             className="carouselItemImg"
             src={allProjects[index].thumbNail}

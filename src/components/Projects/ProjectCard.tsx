@@ -40,16 +40,18 @@ export const ProjectCard: React.FC<Props> = (props) => {
 
   return (
     <Card className="projectCard customCard" title={shortDescr}>
-      <Card.Img
-        variant="top"
-        onClick={handleClick}
-        src={thumbNail}
-        alt={title}
-        className="projectThumbnail"
-      />
+      <div style={{ height: '15rem' }}>
+        <Card.Img
+          variant="top"
+          onClick={handleClick}
+          src={thumbNail}
+          alt={title}
+          className="projectThumbnail"
+        />
+      </div>
       <Card.Body style={{ padding: 0 }}>
         <Card.Title>{titleize(title)}</Card.Title>
-        <Card.Text>{shortDescr}</Card.Text>
+        <Card.Text style={{ minHeight: '5rem' }}>{shortDescr}</Card.Text>
         <Link to={`/projects/${slugify(title.toLowerCase())}`}>
           <Button variant="primary" className="styledButton">
             More about {title}

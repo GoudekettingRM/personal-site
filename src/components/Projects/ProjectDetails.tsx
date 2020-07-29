@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import ReactMarkdown from 'react-markdown';
 
 import { allProjects } from '../../data/projectData';
 import { PageHeader } from '../Header/PageHeader';
@@ -67,7 +68,9 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <Card.Text>{longDescr}</Card.Text>
+            <Card.Text>
+              <ReactMarkdown source={longDescr} />
+            </Card.Text>
             <Card.Text>
               {deployedVersionUrl && (
                 <UiLink label={deployedUrlLabel} url={deployedVersionUrl} />
