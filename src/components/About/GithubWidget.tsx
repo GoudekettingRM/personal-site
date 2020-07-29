@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Loading } from '../FramerMotionIcons/Loading';
-import Image from 'react-bootstrap/Image';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Repo from '../../icons/repo.svg';
 import Gist from '../../icons/gist.svg';
 import GitHubLogo from '../../icons/github.svg';
@@ -55,9 +55,8 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
   if (githubData) {
     return (
       <div className="githubWidget customCard">
-        <Image
+        <LazyLoadImage
           className="githubWidgetImage"
-          roundedCircle
           src={githubData.imgUrl}
           alt="Robin Goudeketting"
         />

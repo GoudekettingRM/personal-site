@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { AboutItem } from "../../types/aboutItem";
-import Card from "react-bootstrap/Card";
-import Accordion from "react-bootstrap/Accordion";
+import React, { useState } from 'react';
+import { AboutItem } from '../../types/aboutItem';
+import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type Props = {
   data: AboutItem;
@@ -18,14 +19,13 @@ export const AboutDataCard: React.FC<Props> = (props) => {
   return (
     <Accordion>
       <Card className="aboutCard">
-        <Card.Img
-          variant="top"
+        <LazyLoadImage
           src={image}
           alt={`Me, ${title}`}
           style={{
-            maxWidth: "100%",
-            width: "auto",
-            height: "auto",
+            maxWidth: '100%',
+            width: 'auto',
+            height: 'auto',
           }}
         />
         <Card.Body>
@@ -34,7 +34,7 @@ export const AboutDataCard: React.FC<Props> = (props) => {
               as="a"
               variant="link"
               className="cardLink"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               onClick={_toggleOpen}
               eventKey="0">
               {`< ${title} />`}
@@ -42,7 +42,7 @@ export const AboutDataCard: React.FC<Props> = (props) => {
             </Accordion.Toggle>
           </Card.Title>
           <Accordion.Collapse eventKey="0">
-            <Card.Body>
+            <Card.Text>
               {description}
               <br />
               <br />
@@ -52,11 +52,11 @@ export const AboutDataCard: React.FC<Props> = (props) => {
                   href={moreInformationUrl}
                   target="_blank"
                   rel="noopener noreferrer">
-                  {"< Read more />"}
+                  {'< Read more />'}
                   <span className="underline-link"></span>
                 </a>
               )}
-            </Card.Body>
+            </Card.Text>
           </Accordion.Collapse>
         </Card.Body>
       </Card>

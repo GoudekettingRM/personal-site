@@ -12,17 +12,18 @@ export const About: React.FC = () => {
   return (
     <div>
       <PageHeader title="about" />
+      <div className="spacer"></div>
       <div className="aboutMeContainer">
         <GithubWidget githubUsername={'GoudekettingRM'} />
         <AboutMe />
       </div>
-      <h2 className="subtitle">Education</h2>
+      <h2 className="aboutSubtitle">Education</h2>
       <div className="aboutCardContainer">
         {educations.map((education, i) => (
           <AboutDataCard key={i} data={education} />
         ))}
       </div>
-      <h2 className="subtitle padded-top">Hobbies</h2>
+      <h2 className="aboutSubtitle padded-top">Hobbies</h2>
       <div className="aboutCardContainer">
         {hobbies.map((hobby, i) => (
           <AboutDataCard key={i} data={hobby} />
