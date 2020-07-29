@@ -5,6 +5,7 @@ import { wrap } from '@popmotion/popcorn';
 import { allProjects } from '../../data/projectData';
 import './carousel.scss';
 import { useHistory } from 'react-router';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const variants = {
   enter: (direction: number) => {
@@ -50,7 +51,7 @@ export const Carousel = () => {
             x: { type: 'spring', stiffness: 300, damping: 200 },
             opacity: { duration: 0.2 },
           }}>
-          <img
+          <LazyLoadImage
             className="carouselItemImg"
             src={allProjects[index].thumbNail}
             alt={allProjects[index].title}

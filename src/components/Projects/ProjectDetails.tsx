@@ -20,13 +20,15 @@ interface Props extends RouteComponentProps<Params> {}
 
 export const ProjectDetails: React.FC<Props> = ({ match }) => {
   const project = allProjects.find(
-    (project) => project.id === parseInt(match.params.projectId),
+    (project) =>
+      titleize(project.title) ===
+      titleize(match.params.projectId, { isSlug: true }),
   );
 
   if (!project)
     return (
       <div>
-        <PageHeader title="404 - Not Found" />
+        <PageHeader title="Not Found" />
       </div>
     );
 
@@ -51,7 +53,7 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
 
   return (
     <>
-      <PageHeader title={titleize(title)} />
+      <PageHeader title={title} />
       <div className="spacerSmall"></div>
       <Accordion className="customCard">
         <Card.Img

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import titleize from 'titleizejs';
+import slugify from 'slugify';
 import { ProjectType } from '../../types/project';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -49,9 +50,9 @@ export const ProjectCard: React.FC<Props> = (props) => {
       <Card.Body style={{ padding: 0 }}>
         <Card.Title>{titleize(title)}</Card.Title>
         <Card.Text>{shortDescr}</Card.Text>
-        <Link to={`/projects/${id}`}>
+        <Link to={`/projects/${slugify(title.toLowerCase())}`}>
           <Button variant="primary" className="styledButton">
-            Read more
+            More about {title}
           </Button>
         </Link>
         <br />

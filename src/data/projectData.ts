@@ -10,7 +10,7 @@ export const repoUrlLabels: { [index: string]: string } = {
 export const allProjects: ProjectType[] = [
   {
     id: 1,
-    title: 'Should I Go Out?',
+    title: 'Should I Go Out',
     deployedVersionUrl: 'http://www.should-i-go-out.com/',
     clientRepoUrl: 'https://github.com/GoudekettingRM/should-i-go-out-client',
     shortDescr:
@@ -31,7 +31,7 @@ export const allProjects: ProjectType[] = [
   },
   {
     id: 2,
-    title: 'Should I Go Out?',
+    title: 'Titleize JS',
     deployedVersionUrl: 'http://www.should-i-go-out.com/',
     clientRepoUrl: 'https://github.com/GoudekettingRM/should-i-go-out-client',
     serverRepoUrl: 'https://google.com/',

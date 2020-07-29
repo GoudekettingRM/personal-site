@@ -86,8 +86,10 @@
 }
 .verticalLine {
   width: 1px;
-  background-color: gray;
+  background-color: $grey-700;
+  margin: 0 0.7rem;
 }
 .githubWidgetButton {
   margin: 1rem;
+  color: $grey-900 !important;
 }

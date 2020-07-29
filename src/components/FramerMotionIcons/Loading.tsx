@@ -1,7 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export const Loading: React.FC = () => {
+interface LoadingProps {
+  color?: string;
+}
+
+export const Loading: React.FC<LoadingProps> = ({ color }) => {
   const loading = {
     containerStyle: {
       width: '2rem',
@@ -14,7 +18,7 @@ export const Loading: React.FC = () => {
       display: 'block',
       width: '0.5rem',
       height: '0.5rem',
-      backgroundColor: 'white',
+      backgroundColor: color ? color : 'white',
       borderRadius: '0.25rem',
     },
     loadingContainerVariants: {

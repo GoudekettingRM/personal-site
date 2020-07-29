@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Recaptcha from 'react-recaptcha';
 import { Loading } from '../../FramerMotionIcons/Loading';
+import { transform } from 'framer-motion';
 
 type MessageDataType = {
   name: string;
@@ -149,13 +150,15 @@ export const ContactForm: React.FC = () => {
               }
             />
           </div>
-          {!readyForRecaptcha && <Loading />}
+          {!readyForRecaptcha && <Loading color="navy" />}
           {readyForRecaptcha && (
-            <Recaptcha
-              sitekey="6LcnvOYUAAAAAAdjNzd3gG6g8YvDEv8eupEpN5hP"
-              render="explicit"
-              verifyCallback={_verifyCallback}
-            />
+            <div className="recaptchaContainer">
+              <Recaptcha
+                sitekey="6LcnvOYUAAAAAAdjNzd3gG6g8YvDEv8eupEpN5hP"
+                render="explicit"
+                verifyCallback={_verifyCallback}
+              />
+            </div>
           )}
 
           <Button variant="primary" type="submit" className="styledButton">

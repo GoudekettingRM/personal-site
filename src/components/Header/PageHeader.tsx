@@ -11,7 +11,9 @@ export const PageHeader: React.FC<Props> = (props) => {
   return (
     <>
       <header className="header">
-        <h1 className="pageTitle">{titleize(props.title)}</h1>
+        <h1 className="pageTitle">
+          {titleize(props.title, { keepUpperCaseLetters: true })}
+        </h1>
       </header>
       <div className="spacer"></div>
     </>

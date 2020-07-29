@@ -11,28 +11,31 @@ export const Footer: React.FC = () => {
         <hr />
         <p>
           <a
-            className="externalLink"
+            aria-label="Link to Robin's Github"
+            className="externalLinkGithub"
             href="https://github.com/GoudekettingRM"
             target="_blank"
             rel="noopener noreferrer">
             <Github className="icon" />
           </a>
           <a
-            className="externalLink"
+            aria-label="Link to Robin's LinkedIn"
+            className="externalLinkLinkedIn"
             href="https://www.linkedin.com/in/robinmgoudeketting/"
             target="_blank"
             rel="noopener noreferrer">
             <LinkedIn className="icon" />
           </a>
           <a
-            className="externalLink"
+            aria-label="Link to Robin's Dev Profile"
+            className="externalLinkDevTo"
             href="https://dev.to/goudekettingrm"
             target="_blank"
             rel="noopener noreferrer">
             <DevTo className="icon" />
           </a>
         </p>
-        <h6 className="copyright">© 2020. All rights reserved.</h6>
+        <p className="copyright">© 2020. All rights reserved.</p>
       </footer>
     </>
   );
