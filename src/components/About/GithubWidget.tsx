@@ -21,9 +21,6 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
   const [githubData, setGithubData] = useState<GithubData>();
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${githubUsername}/events`)
-      .then((response) => response.json())
-      .then((data) => console.log('data test', data));
     const getGithubData = async (): Promise<GithubData | void> => {
       try {
         const response = await fetch(
@@ -39,7 +36,7 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
           };
         }
       } catch (error) {
-        console.log(error);
+        console.error('Error while fetching github data for',githubUsername ,error);
       }
     };
 
@@ -47,7 +44,7 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
       const data = await getGithubData();
       if (data) {
         setGithubData(data);
-      } else console.log('No data');
+      } else console.error(`No data github data found for ${githubUsername}`);
     };
 
     if (!githubData) {
