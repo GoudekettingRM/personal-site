@@ -92,4 +92,7 @@
 .githubWidgetButton {
   margin: 1rem;
   color: $grey-900 !important;
+  &:hover {
+    color: $grey-100 !important;
+  }
 }

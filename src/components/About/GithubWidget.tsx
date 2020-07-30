@@ -21,6 +21,9 @@ export const GithubWidget: React.FC<Props> = ({ githubUsername }) => {
   const [githubData, setGithubData] = useState<GithubData>();
 
   useEffect(() => {
+    fetch(`https://api.github.com/users/${githubUsername}/events`)
+      .then((response) => response.json())
+      .then((data) => console.log('data test', data));
     const getGithubData = async (): Promise<GithubData | void> => {
       try {
         const response = await fetch(
