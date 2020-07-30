@@ -46,3 +46,11 @@
   max-width: 500px;
   margin: 1rem auto;
 }
+.projectDetailsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .toggleProjectButton {
+    display: block !important;
+  }
+}

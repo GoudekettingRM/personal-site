@@ -56,38 +56,44 @@ export const ProjectDetails: React.FC<Props> = ({ match }) => {
     <>
       <PageHeader title={title} />
       <div className="spacerSmall"></div>
-      <Accordion className="customCard">
+      <Accordion className="customCard projectDetailsCard">
         <Card.Img
           className="detailsImage"
           src={thumbNail}
           alt={title}
           title={title}></Card.Img>
-        <Card.Body>{shortDescr}</Card.Body>
-        <Accordion.Toggle as={Button} eventKey="0" className="styledButton">
+        <Card.Body>
+          <Card.Text>{shortDescr}</Card.Text>
+          <Card.Text className="projectDetailsCard__repoLinks">
+            {deployedVersionUrl && (
+              <UiLink label={deployedUrlLabel} url={deployedVersionUrl} />
+            )}
+            {clientRepoUrl && (
+              <UiLink label={clientRepoLabel} url={clientRepoUrl} />
+            )}
+            {serverRepoUrl && (
+              <UiLink label={serverRepoLabel} url={serverRepoUrl} />
+            )}
+            {generalRepoUrl && (
+              <UiLink label={generalRepoLabel} url={generalRepoUrl} />
+            )}
+          </Card.Text>
+        </Card.Body>
+        <Accordion.Toggle
+          as={Button}
+          eventKey="0"
+          className="toggleProjectButton styledButton">
           More About the Project
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <Card.Text>
-              <ReactMarkdown source={longDescr} />
-            </Card.Text>
-            <Card.Text>
-              {deployedVersionUrl && (
-                <UiLink label={deployedUrlLabel} url={deployedVersionUrl} />
-              )}
-              {clientRepoUrl && (
-                <UiLink label={clientRepoLabel} url={clientRepoUrl} />
-              )}
-              {serverRepoUrl && (
-                <UiLink label={serverRepoLabel} url={serverRepoUrl} />
-              )}
-              {generalRepoUrl && (
-                <UiLink label={generalRepoLabel} url={generalRepoUrl} />
-              )}
-            </Card.Text>
+            <ReactMarkdown source={longDescr} />
           </Card.Body>
         </Accordion.Collapse>
-        <Accordion.Toggle as={Button} eventKey="1" className="styledButton">
+        <Accordion.Toggle
+          as={Button}
+          eventKey="1"
+          className="toggleProjectButton styledButton">
           Technologies Used
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="1">
