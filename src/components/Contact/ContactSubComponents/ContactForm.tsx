@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Recaptcha from 'react-recaptcha';
 import { Loading } from '../../FramerMotionIcons/Loading';
-import { transform } from 'framer-motion';
 
 type MessageDataType = {
   name: string;
