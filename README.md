@@ -1,3 +1,3 @@
 # My Personal Website
 
-**[Check it out!](goudeketting.netlify.app)**
+**[Check it out!](http://goudeketting.netlify.app)**
