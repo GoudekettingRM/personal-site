@@ -5,6 +5,10 @@
   @include head2;
 }
 
+.contactParagraph {
+  color: $white;
+}
+
 .recaptchaContainer {
   transform: scale(0.82);
   -webkit-transform: scale(0.82);

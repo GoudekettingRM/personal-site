@@ -51,7 +51,7 @@ export const ContactForm: React.FC = () => {
       await setLoading(true);
       try {
         await emailjs.send(
-          'strato_webmail',
+          'default_service',
           'contact_request',
           messageData,
           'user_aEK6JuSDMeN6eXBJSHBN6',
@@ -74,8 +74,10 @@ export const ContactForm: React.FC = () => {
     return (
       <>
         <div className="successMessage">
-          <h2>Message sent!</h2>
-          <p>Thank you. I will contact you as soon as possible!</p>
+          <h2 className="contactTitle">Message sent!</h2>
+          <p className="contactParagraph">
+            Thank you. I will contact you as soon as possible!
+          </p>
         </div>
       </>
     );
@@ -85,7 +87,7 @@ export const ContactForm: React.FC = () => {
       {loading && <Loading />}
       {error && (
         <div className="errorMessage">
-          <p>There was an error...</p>
+          <p className="contactParagraph">There was an error...</p>
         </div>
       )}
       {!loading && !error && !success && (
