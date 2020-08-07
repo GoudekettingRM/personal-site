@@ -8,6 +8,7 @@ import { useHistory } from 'react-router';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import titleize from 'titleizejs';
 import slugify from 'slugify';
+import { getFileExtension } from '../../utils/getFileExtension';
 
 const variants = {
   enter: (direction: number) => {
@@ -62,6 +63,11 @@ export const Carousel = () => {
           </h3>
           <LazyLoadImage
             className="carouselItemImg"
+            style={
+              getFileExtension(allProjects[index].thumbNail) === 'svg'
+                ? { backgroundColor: 'white', borderRadius: '8px' }
+                : {}
+            }
             src={allProjects[index].thumbNail}
             alt={allProjects[index].title}
             title={allProjects[index].title}

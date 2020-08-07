@@ -1,4 +1,5 @@
 import { ProjectType } from '../types/project';
+import HomeIcon from '../icons/home.svg';
 
 export const repoUrlLabels: { [index: string]: string } = {
   deployedUrlLabel: '< Deployed version />',
@@ -48,6 +49,26 @@ export const allProjects: ProjectType[] = [
       'Mocha',
       'Chai',
       'Continuous Integration',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Portfolio website',
+    shortDescr: 'This website to showcase my work.',
+    deployedVersionUrl: 'http://goudeketting.netlify.app/',
+    clientRepoUrl: 'https://github.com/GoudekettingRM/personal-site',
+    longDescr:
+      'I made my own portfolio website to provide a point of contact for interested parties and to showcase projects I\ve worked on.',
+    thumbNail: HomeIcon,
+    technologiesUsed: [
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Sass',
+      'Bootstrap',
+      'FramerMotion',
+      'EmailJS',
+      'ReCaptcha',
     ],
   },
 ];
